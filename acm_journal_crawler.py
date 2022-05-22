@@ -33,8 +33,8 @@ logging.basicConfig(filename='output.log', level=logging.INFO)
 logger = logging.getLogger()
 
 
-@sleep(5)
-def get_links_of_publications_of_year_in_decade(journal_name: str, decade: int, year: int):
+@sleep(120)
+def collect_links_of_publications_of_year_in_decade(journal_name: str, decade: int, year: int):
     url = f'{HOST_URL}loi/{journal_name}/group/d{decade}.y{year}'
     page = requests.get(url, timeout=None)
     if page.status_code == 200:
@@ -94,7 +94,7 @@ def has_2010s(journal_name):
 
 
 @sleep(120)
-def has_2020s(journal_name):
+def has_2020s(journal_name: str):
     url = f'{HOST_URL}loi/{journal_name}/group/d2010.y2019'
     page = requests.get(url, timeout=None)
     print(f'{page.status_code} for {journal_name}')
@@ -110,7 +110,31 @@ def soupify_HTML_content(content):
     return BeautifulSoup(content, 'html.parser')
 
 
-def foo():
+def collect_links_of_journal(journal_name: str):
+    if has_2010s(journal_name):
+        collect_links_of_publications_of_year_in_decade(journal_name, 2010, 2018)
+        logger.info("FINISHED 2018")
+        collect_links_of_publications_of_year_in_decade(journal_name, 2010, 2019)
+        logger.info("FINISHED 20119")
+    if has_2020s(journal_name):
+        collect_links_of_publications_of_year_in_decade(journal_name, 2020, 2020)
+        logger.info("FINISHED 2020")
+        collect_links_of_publications_of_year_in_decade(journal_name, 2020, 2021)
+        logger.info("FINISHED 2021")
+        collect_links_of_publications_of_year_in_decade(journal_name, 2020, 2022)
+        logger.info("FINISHED 2022")
+
+
+def collect_all_journal_links():
+    for journal in journals_with_archive:
+        try:
+            collect_links_of_journal(journal)
+        except Exception as e:
+            logger.error(f'could not collect all links of {journal}: {e}')
+    logger.info("🥳DONE WITH THE COLLECTION!🥳")
+
+
+def test_with_local_file():
     page = codecs.open("C:/Users/Jasper/Desktop/tst/JACMArchive.html", 'r', 'utf-8')
     soup = soupify_HTML_content(page)
     links = soup.find_all('a', attrs={'class': 'loi__issue', 'href': re.compile(r'2022')})
@@ -119,14 +143,6 @@ def foo():
         print(l.has_attr('href'))
         print(l['href'])
 
-        # uw = l.unwrap()
-        # print(uw)
-        # print(type(uw))
-        # extr = l.extract()
-        # print(extr)
-        # print(type(extr))
-        # logger.info(str(type(l))  + " "+ str(l))
-
 
 if __name__ == '__main__':
-    get_links_of_publications_of_year_in_decade("jacm", 2020, 2021)
+    collect_all_journal_links()

@@ -1,15 +1,20 @@
+import logging
 from datetime import datetime
 import time
 import pytz
+
+logging.basicConfig(filename='output.log', level=logging.INFO)
+logger = logging.getLogger()
 
 
 def sleep(timeout=120):
     def decorator(f):
         def wrapper(*args, **kwargs):
-            print(f'{timestamp()} - sleeping for {timeout} seconds ...')
+            logger.info(f'{timestamp()} - sleeping for {timeout} seconds before calling {f.__name__} ...')
             time.sleep(timeout)
             # value_if_true if condition else value_if_false
-            print(f'{timestamp()} - running {f.__name__} {"with" if args or kwargs else ""} {args if args else ""} {kwargs if kwargs else ""}')
+            logger.info(
+                f'{timestamp()} - running {f.__name__} {"with" if args or kwargs else ""} {args if args else ""} {kwargs if kwargs else ""}')
             return f(*args, **kwargs)
 
         return wrapper
