@@ -27,7 +27,7 @@ journals_with_archive = ['csur', 'dgov', 'dtrap', 'fac', 'health', 'imwut', 'jac
                          'pacmcgit', 'pacmhci', 'pacmpl', 'pomacs', 'taas', 'taccess', 'taco', 'talg', 'tallip', 'tap',
                          'taslp', 'tcbb', 'tcps', 'tds', 'teac', 'tecs', 'telo', 'thri', 'tiis', 'tiot', 'tist', 'tkdd',
                          'tmis', 'toce', 'tochi', 'tocl', 'tocs', 'toct', 'todaes', 'tods', 'tog', 'tois', 'toit',
-                         'tomacs', 'tomm']  # 46
+                         'tomacs', 'tomm']  # 46/46 Done
 
 logging.basicConfig(filename='output.log', level=logging.INFO)
 logger = logging.getLogger()
@@ -125,8 +125,8 @@ def collect_links_of_journal(journal_name: str):
         logger.info("FINISHED 2022")
 
 
-def collect_all_journal_links():
-    for journal in journals_with_archive:
+def collect_all_journal_links(journals: list):
+    for journal in journals:
         try:
             collect_links_of_journal(journal)
         except Exception as e:
@@ -145,4 +145,5 @@ def test_with_local_file():
 
 
 if __name__ == '__main__':
-    collect_all_journal_links()
+    print(len(journals_with_archive))
+    collect_all_journal_links(journals_with_archive)
