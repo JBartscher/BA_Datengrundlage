@@ -7,7 +7,7 @@ logging.basicConfig(filename='output.log', level=logging.INFO)
 logger = logging.getLogger()
 
 
-def sleep(timeout=120):
+def wait(timeout=120):
     def decorator(f):
         def wrapper(*args, **kwargs):
             logger.info(f'{timestamp()} - sleeping for {timeout} seconds before calling {f.__name__} ...')
@@ -28,7 +28,7 @@ def timestamp():
     return now.strftime("%d-%m-%Y %H:%M:%S")
 
 
-@sleep(3)
+@wait(3)
 def foo(gef):
     print("foooo")
 

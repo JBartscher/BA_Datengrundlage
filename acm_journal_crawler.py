@@ -4,7 +4,7 @@ import re
 import requests
 
 from persistence import set_document_to_firestore
-from util import sleep, timestamp
+from util import wait, timestamp
 
 from bs4 import BeautifulSoup
 import logging
@@ -33,7 +33,7 @@ logging.basicConfig(filename='output.log', level=logging.INFO)
 logger = logging.getLogger()
 
 
-@sleep(120)
+@wait(120)
 def collect_links_of_publications_of_year_in_decade(journal_name: str, decade: int, year: int):
     url = f'{HOST_URL}loi/{journal_name}/group/d{decade}.y{year}'
     page = requests.get(url, timeout=None)
@@ -62,7 +62,7 @@ def collect_links_of_publications_of_year_in_decade(journal_name: str, decade: i
             f'cannot get year {year} from decade {decade} of journal {journal_name}. Received {page.status_code} status code')
 
 
-@sleep(120)
+@wait(120)
 def has_archive(journal_name):
     url = f'{HOST_URL}loi/{journal_name}'
     page = requests.get(url, timeout=None)
@@ -80,7 +80,7 @@ def has_archive(journal_name):
     return False  # cant access
 
 
-@sleep(120)
+@wait(120)
 def has_2010s(journal_name):
     url = f'{HOST_URL}loi/{journal_name}/group/d2010.y2019'
     page = requests.get(url, timeout=None)
@@ -93,7 +93,7 @@ def has_2010s(journal_name):
         return False  # has no 2010-2019
 
 
-@sleep(120)
+@wait(120)
 def has_2020s(journal_name: str):
     url = f'{HOST_URL}loi/{journal_name}/group/d2010.y2019'
     page = requests.get(url, timeout=None)
