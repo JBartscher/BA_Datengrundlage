@@ -53,7 +53,10 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/imwut/2018/2/2', '/toc/imwut/2018/2/1', '/toc/imwut/2018/1/4',
                                 '/toc/imwut/2019/3/4', '/toc/imwut/2019/3/3', '/toc/imwut/2019/3/2',
                                 '/toc/imwut/2019/3/1', '/toc/imwut/2020/4/4', '/toc/imwut/2020/4/3',
-                                '/toc/imwut/2020/4/2', '/toc/imwut/2020/4/1', '/toc/imwut/2021/5/4']
+                                '/toc/imwut/2020/4/2', '/toc/imwut/2020/4/1', '/toc/imwut/2021/5/4',
+                                '/toc/imwut/2021/5/3', '/toc/imwut/2021/5/2', '/toc/imwut/2021/5/1',
+                                '/toc/imwut/2022/6/1', '/toc/jacm/2018/65/6', '/toc/jacm/2018/65/5',
+                                '/toc/jacm/2018/65/4']
 
 
 @wait(15)
