@@ -60,7 +60,19 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/jacm/2018/65/1', '/toc/jacm/2019/66/6', '/toc/jacm/2019/66/5',
                                 '/toc/jacm/2019/66/4', '/toc/jacm/2019/66/3', '/toc/jacm/2019/66/2',
                                 '/toc/jacm/2019/66/1', '/toc/jacm/2020/67/6', '/toc/jacm/2020/67/5',
-                                '/toc/jacm/2020/67/4', '/toc/jacm/2020/67/3']
+                                '/toc/jacm/2020/67/4', '/toc/jacm/2020/67/3', '/toc/jacm/2020/67/2',
+                                '/toc/jacm/2020/67/1', '/toc/jacm/2021/68/6', '/toc/jacm/2021/68/5',
+                                '/toc/jacm/2021/68/4', '/toc/jacm/2021/68/3', '/toc/jacm/2021/68/2',
+                                '/toc/jacm/2021/68/1', '/toc/jacm/2022/69/2', '/toc/jacm/2022/69/1',
+                                '/toc/jdiq/2018/10/4', '/toc/jdiq/2018/10/3', '/toc/jdiq/2018/10/2',
+                                '/toc/jdiq/2018/10/1', '/toc/jdiq/2019/11/4', '/toc/jdiq/2019/11/3',
+                                '/toc/jdiq/2019/11/2', '/toc/jdiq/2019/11/1', '/toc/jdiq/2020/12/4',
+                                '/toc/jdiq/2020/12/3', '/toc/jdiq/2020/12/2', '/toc/jdiq/2020/12/1',
+                                '/toc/jdiq/2021/13/4', '/toc/jdiq/2021/13/3', '/toc/jdiq/2021/13/2',
+                                '/toc/jdiq/2021/13/1', '/toc/jdiq/2022/14/2', '/toc/jdiq/2022/14/1',
+                                '/toc/jetc/2018/14/4', '/toc/jetc/2018/14/3', '/toc/jetc/2018/14/2',
+                                '/toc/jetc/2018/14/1', '/toc/jetc/2019/15/4', '/toc/jetc/2019/15/3',
+                                '/toc/jetc/2019/15/2', '/toc/jetc/2019/15/1', '/toc/jetc/2020/16/4']
 
 
 @wait(15)
