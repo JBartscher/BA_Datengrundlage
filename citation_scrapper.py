@@ -23,7 +23,37 @@ logger = logging.getLogger()
 bibtext_raw_logger = logging.getLogger()
 bibtext_json_logger = logging.getLogger()
 
-already_done_journals_issues = ['/toc/csur/2018/50/6']
+already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/toc/csur/2018/50/4',
+                                '/toc/csur/2018/50/3', '/toc/csur/2018/50/2', '/toc/csur/2018/50/1',
+                                '/toc/csur/2019/51/6', '/toc/csur/2019/51/5', '/toc/csur/2019/51/4',
+                                '/toc/csur/2019/51/3', '/toc/csur/2019/51/2', '/toc/csur/2019/51/1',
+                                '/toc/csur/2020/52/6', '/toc/csur/2020/52/5', '/toc/csur/2020/52/4',
+                                '/toc/csur/2020/52/3', '/toc/csur/2020/52/2', '/toc/csur/2020/52/1',
+                                '/toc/csur/2021/53/6', '/toc/csur/2021/53/5', '/toc/csur/2021/53/4',
+                                '/toc/csur/2021/53/3', '/toc/csur/2021/53/2', '/toc/csur/2021/53/1',
+                                '/toc/csur/2022/54/9', '/toc/csur/2022/54/8', '/toc/csur/2022/54/7',
+                                '/toc/csur/2022/54/6', '/toc/csur/2022/54/5', '/toc/csur/2022/54/4',
+                                '/toc/csur/2022/54/3', '/toc/csur/2022/54/2', '/toc/csur/2022/54/1',
+                                '/toc/dgov/2020/1/4', '/toc/dgov/2020/1/3', '/toc/dgov/2020/1/2', '/toc/dgov/2020/1/1',
+                                '/toc/dgov/2021/2/4', '/toc/dgov/2021/2/3', '/toc/dgov/2021/2/2', '/toc/dgov/2021/2/1',
+                                '/toc/dgov/2022/3/1', '/toc/dtrap/2020/1/4', '/toc/dtrap/2020/1/3',
+                                '/toc/dtrap/2020/1/2', '/toc/dtrap/2020/1/1', '/toc/dtrap/2021/2/4',
+                                '/toc/dtrap/2021/2/3', '/toc/dtrap/2021/2/2', '/toc/dtrap/2021/2/1',
+                                '/toc/dtrap/2022/3/2', '/toc/dtrap/2022/3/1', '/toc/fac/2018/30/6',
+                                '/toc/fac/2018/30/5', '/toc/fac/2018/30/3-4', '/toc/fac/2018/30/2',
+                                '/toc/fac/2018/30/1', '/toc/fac/2019/31/6', '/toc/fac/2019/31/5', '/toc/fac/2019/31/4',
+                                '/toc/fac/2019/31/3', '/toc/fac/2019/31/2', '/toc/fac/2019/31/1',
+                                '/toc/fac/2020/32/4-6', '/toc/fac/2020/32/2-3', '/toc/fac/2020/32/1',
+                                '/toc/fac/2021/33/6', '/toc/fac/2021/33/4-5', '/toc/fac/2021/33/3',
+                                '/toc/fac/2021/33/2', '/toc/fac/2021/33/1', '/toc/health/2020/1/4',
+                                '/toc/health/2020/1/3', '/toc/health/2020/1/2', '/toc/health/2020/1/1',
+                                '/toc/health/2021/2/4', '/toc/health/2021/2/3', '/toc/health/2021/2/2',
+                                '/toc/health/2021/2/1', '/toc/health/2022/3/3', '/toc/health/2022/3/2',
+                                '/toc/health/2022/3/1', '/toc/imwut/2018/2/4', '/toc/imwut/2018/2/3',
+                                '/toc/imwut/2018/2/2', '/toc/imwut/2018/2/1', '/toc/imwut/2018/1/4',
+                                '/toc/imwut/2019/3/4', '/toc/imwut/2019/3/3', '/toc/imwut/2019/3/2',
+                                '/toc/imwut/2019/3/1', '/toc/imwut/2020/4/4', '/toc/imwut/2020/4/3',
+                                '/toc/imwut/2020/4/2', '/toc/imwut/2020/4/1', '/toc/imwut/2021/5/4']
 
 
 @wait(15)
@@ -75,7 +105,7 @@ def print_and_pickle_all_already_scrapped_entries():
     pickle.dump(already_done_journals_issues, open("save.p", "wb"))
 
 
-@wait(120)
+@wait(30)
 def collect_citations_for_journal_issue(journal: str, journal_publication_link: str):
     parser = create_parser()
 
@@ -84,6 +114,10 @@ def collect_citations_for_journal_issue(journal: str, journal_publication_link: 
     url = f'{HOST_URL}{journal_publication_link}'
     print(url)
     driver.get(url)  # url associated with button click
+
+    click_wrapper(driver.find_element(By.TAG_NAME, "body"))
+    sleep(3)
+
     # driver.get(f'file:///C:/Users/Jasper/Desktop/tst/JACM_%20Vol69No1.html')  # url associated with button click
     elements = driver.find_elements(By.XPATH,
                                     "//li/a[@class='btn--icon simple-tooltip__block--b'][@aria-label='Export Citation']")
@@ -94,12 +128,12 @@ def collect_citations_for_journal_issue(journal: str, journal_publication_link: 
         logger.info(f'element: {element}')
         # click_element(element, driver)  # clicks on citation icon
         click_wrapper(element)
-        sleep(5)
+        sleep(4)
         cpy_to_clipboard_btn = driver.find_element(By.XPATH,
                                                    "//a[@class='copy__btn'][@title='Copy citation'][@role='menuitem']")
         # click_element(cpy_to_clipboard_btn, driver)  # copy on "to clipboard" button
         click_wrapper(cpy_to_clipboard_btn)
-        sleep(5)  # wait a bit longer to ensure the citation text is loaded
+        sleep(4)  # wait a bit longer to ensure the citation text is loaded
 
         bibtext_raw_str = Tk().clipboard_get()
         logger.info(bibtext_raw_str)
@@ -110,7 +144,7 @@ def collect_citations_for_journal_issue(journal: str, journal_publication_link: 
 
         # click_element(driver.find_element(By.TAG_NAME, "body"))  # click on body, leave citation view
         click_wrapper(driver.find_element(By.TAG_NAME, "body"))
-        sleep(5)
+        sleep(3)
 
 
 def save_newest_citation(db: BibDatabase, journal: str, edition: str, n: int):
