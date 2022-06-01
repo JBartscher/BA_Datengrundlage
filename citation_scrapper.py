@@ -56,7 +56,11 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/imwut/2020/4/2', '/toc/imwut/2020/4/1', '/toc/imwut/2021/5/4',
                                 '/toc/imwut/2021/5/3', '/toc/imwut/2021/5/2', '/toc/imwut/2021/5/1',
                                 '/toc/imwut/2022/6/1', '/toc/jacm/2018/65/6', '/toc/jacm/2018/65/5',
-                                '/toc/jacm/2018/65/4']
+                                '/toc/jacm/2018/65/4', '/toc/jacm/2018/65/3', '/toc/jacm/2018/65/2',
+                                '/toc/jacm/2018/65/1', '/toc/jacm/2019/66/6', '/toc/jacm/2019/66/5',
+                                '/toc/jacm/2019/66/4', '/toc/jacm/2019/66/3', '/toc/jacm/2019/66/2',
+                                '/toc/jacm/2019/66/1', '/toc/jacm/2020/67/6', '/toc/jacm/2020/67/5',
+                                '/toc/jacm/2020/67/4', '/toc/jacm/2020/67/3']
 
 
 @wait(15)
@@ -104,7 +108,7 @@ def collect_all_citations():
 
 
 def print_and_pickle_all_already_scrapped_entries():
-    print(*already_done_journals_issues, sep=' ')
+    # print(*already_done_journals_issues, sep=' ')
     pickle.dump(already_done_journals_issues, open("save.p", "wb"))
 
 
@@ -119,7 +123,7 @@ def collect_citations_for_journal_issue(journal: str, journal_publication_link: 
     driver.get(url)  # url associated with button click
 
     click_wrapper(driver.find_element(By.TAG_NAME, "body"))
-    sleep(3)
+    sleep(5)
 
     # driver.get(f'file:///C:/Users/Jasper/Desktop/tst/JACM_%20Vol69No1.html')  # url associated with button click
     elements = driver.find_elements(By.XPATH,
@@ -131,12 +135,12 @@ def collect_citations_for_journal_issue(journal: str, journal_publication_link: 
         logger.info(f'element: {element}')
         # click_element(element, driver)  # clicks on citation icon
         click_wrapper(element)
-        sleep(4)
+        sleep(5)
         cpy_to_clipboard_btn = driver.find_element(By.XPATH,
                                                    "//a[@class='copy__btn'][@title='Copy citation'][@role='menuitem']")
         # click_element(cpy_to_clipboard_btn, driver)  # copy on "to clipboard" button
         click_wrapper(cpy_to_clipboard_btn)
-        sleep(4)  # wait a bit longer to ensure the citation text is loaded
+        sleep(5)  # wait a bit longer to ensure the citation text is loaded
 
         bibtext_raw_str = Tk().clipboard_get()
         logger.info(bibtext_raw_str)
@@ -147,7 +151,7 @@ def collect_citations_for_journal_issue(journal: str, journal_publication_link: 
 
         # click_element(driver.find_element(By.TAG_NAME, "body"))  # click on body, leave citation view
         click_wrapper(driver.find_element(By.TAG_NAME, "body"))
-        sleep(3)
+        sleep(5)
 
 
 def save_newest_citation(db: BibDatabase, journal: str, edition: str, n: int):
