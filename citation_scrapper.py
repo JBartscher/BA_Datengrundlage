@@ -77,7 +77,14 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/jetc/2021/17/4', '/toc/jetc/2021/17/3', '/toc/jetc/2021/17/2',
                                 '/toc/jetc/2021/17/1', '/toc/jetc/2022/18/3', '/toc/jetc/2022/18/2',
                                 '/toc/jetc/2022/18/1', '/toc/jocch/2018/11/4', '/toc/jocch/2018/11/3',
-                                '/toc/jocch/2018/11/2', '/toc/jocch/2018/11/1', '/toc/jocch/2019/12/3']
+                                '/toc/jocch/2018/11/2', '/toc/jocch/2018/11/1', '/toc/jocch/2019/12/3',
+                                '/toc/jocch/2019/12/2', '/toc/jocch/2019/12/1', '/toc/jocch/2020/13/4',
+                                '/toc/jocch/2020/13/3', '/toc/jocch/2020/13/2', '/toc/jocch/2020/13/1',
+                                '/toc/jocch/2020/12/4', '/toc/jocch/2021/14/4', '/toc/jocch/2021/14/3',
+                                '/toc/jocch/2021/14/2', '/toc/jocch/2021/14/1', '/toc/jocch/2022/15/2',
+                                '/toc/jocch/2022/15/1', '/toc/pacmcgit/2018/1/2', '/toc/pacmcgit/2018/1/1',
+                                '/toc/pacmcgit/2019/2/2', '/toc/pacmcgit/2019/2/1', '/toc/pacmcgit/2020/3/2',
+                                '/toc/pacmcgit/2020/3/1']
 
 
 @wait(15)
