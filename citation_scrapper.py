@@ -7,12 +7,13 @@ import bibtexparser
 from bibtexparser.bibdatabase import BibDatabase
 from bibtexparser.bparser import BibTexParser
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
 from persistence import set_document_to_firestore, get_documents_from_firestore
-from util import wait
+from util import wait, timestamp
 
 HOST_URL = "https://dl.acm.org"
 JOURNAL_COLLECTION = "journal-publications"
@@ -84,7 +85,33 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/jocch/2021/14/2', '/toc/jocch/2021/14/1', '/toc/jocch/2022/15/2',
                                 '/toc/jocch/2022/15/1', '/toc/pacmcgit/2018/1/2', '/toc/pacmcgit/2018/1/1',
                                 '/toc/pacmcgit/2019/2/2', '/toc/pacmcgit/2019/2/1', '/toc/pacmcgit/2020/3/2',
-                                '/toc/pacmcgit/2020/3/1']
+                                '/toc/pacmcgit/2020/3/1', '/toc/pacmcgit/2021/4/3', '/toc/pacmcgit/2021/4/2',
+                                '/toc/pacmcgit/2021/4/1', '/toc/pacmcgit/2022/5/2', '/toc/pacmcgit/2022/5/1',
+                                '/toc/pacmhci/2018/2/CSCW', '/toc/pacmhci/2018/2/EICS', '/toc/pacmhci/2019/3/GROUP',
+                                '/toc/pacmhci/2019/3/CSCW', '/toc/pacmhci/2019/3/EICS', '/toc/pacmhci/2020/4/ISS',
+                                '/toc/pacmhci/2020/4/CSCW2', '/toc/pacmhci/2020/4/EICS', '/toc/pacmhci/2020/4/CSCW1',
+                                '/toc/pacmhci/2020/4/GROUP', '/toc/pacmhci/2021/5/ISS', '/toc/pacmhci/2021/5/CSCW2',
+                                '/toc/pacmhci/2021/5/CHI+PLAY', '/toc/pacmhci/2021/5/GROUP', '/toc/pacmhci/2021/5/EICS',
+                                '/toc/pacmhci/2021/5/CSCW1', '/toc/pacmhci/2021/4/CSCW3', '/toc/pacmhci/2022/6/ETRA',
+                                '/toc/pacmhci/2022/6/CSCW1', '/toc/pacmhci/2022/6/GROUP', '/toc/pacmpl/2018/2/OOPSLA',
+                                '/toc/pacmpl/2018/2/ICFP', '/toc/pacmpl/2018/2/POPL', '/toc/pacmpl/2019/3/OOPSLA',
+                                '/toc/pacmpl/2019/3/ICFP', '/toc/pacmpl/2019/3/POPL', '/toc/pacmpl/2020/4/OOPSLA',
+                                '/toc/pacmpl/2020/4/ICFP', '/toc/pacmpl/2020/4/HOPL', '/toc/pacmpl/2020/4/POPL',
+                                '/toc/pacmpl/2021/5/OOPSLA', '/toc/pacmpl/2021/5/ICFP', '/toc/pacmpl/2021/5/POPL',
+                                '/toc/pacmpl/2022/6/OOPSLA1', '/toc/pacmpl/2022/6/POPL', '/toc/pomacs/2018/2/3',
+                                '/toc/pomacs/2018/2/2', '/toc/pomacs/2018/2/1', '/toc/pomacs/2019/3/3',
+                                '/toc/pomacs/2019/3/2', '/toc/pomacs/2019/3/1', '/toc/pomacs/2020/4/3',
+                                '/toc/pomacs/2020/4/2', '/toc/pomacs/2020/4/1', '/toc/pomacs/2021/5/3',
+                                '/toc/pomacs/2021/5/2', '/toc/pomacs/2021/5/1', '/toc/pomacs/2022/6/1',
+                                '/toc/taas/2018/13/4', '/toc/taas/2018/13/3', '/toc/taas/2018/13/2',
+                                '/toc/taas/2018/13/1', '/toc/taas/2020/15/4', '/toc/taas/2020/15/3',
+                                '/toc/taas/2020/15/2', '/toc/taas/2020/15/1', '/toc/taas/2021/16/2',
+                                '/toc/taas/2021/16/1', '/toc/taccess/2018/11/4', '/toc/taccess/2018/11/3',
+                                '/toc/taccess/2018/11/2', '/toc/taccess/2018/11/1', '/toc/taccess/2019/12/4',
+                                '/toc/taccess/2019/12/3', '/toc/taccess/2019/12/2', '/toc/taccess/2019/12/1',
+                                '/toc/taccess/2020/13/4', '/toc/taccess/2020/13/3', '/toc/taccess/2020/13/2',
+                                '/toc/taccess/2020/13/1', '/toc/taccess/2021/14/4', '/toc/taccess/2021/14/3',
+                                '/toc/taccess/2021/14/2']
 
 
 @wait(15)
@@ -123,10 +150,17 @@ def collect_all_citations():
         journal = journal_publication_data.get("journal")
         link = journal_publication_data.get("link")
         if link not in already_done_journals_issues:
-            collect_citations_for_journal_issue(journal, link)
-            already_done_journals_issues.append(link)
-            print(f'done with: {already_done_journals_issues}')
-            print_and_pickle_all_already_scrapped_entries()
+            try:
+                collect_citations_for_journal_issue(journal, link)
+                already_done_journals_issues.append(link)
+                print(f'[{timestamp}]done with: {already_done_journals_issues}')
+                print_and_pickle_all_already_scrapped_entries()
+            except NoSuchElementException as e:
+                print(e)
+                logger.warning(f"restarting after failure: {e}")
+                print("restarting...")
+                collect_all_citations()
+
         else:
             print(f'already done with {link}')
 
@@ -167,8 +201,8 @@ def collect_citations_for_journal_issue(journal: str, journal_publication_link: 
         sleep(5)  # wait a bit longer to ensure the citation text is loaded
 
         bibtext_raw_str = Tk().clipboard_get()
-        logger.info(bibtext_raw_str)
-        bibtext_raw_logger.info(bibtext_raw_str)
+        # logger.info(bibtext_raw_str)
+        # bibtext_raw_logger.info(bibtext_raw_str)
 
         bib_db = parse_bibtext_to_json(parser, bibtext_raw_str)
         save_newest_citation(bib_db, journal, journal_publication_link, count)
