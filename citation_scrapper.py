@@ -111,7 +111,28 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/taccess/2019/12/3', '/toc/taccess/2019/12/2', '/toc/taccess/2019/12/1',
                                 '/toc/taccess/2020/13/4', '/toc/taccess/2020/13/3', '/toc/taccess/2020/13/2',
                                 '/toc/taccess/2020/13/1', '/toc/taccess/2021/14/4', '/toc/taccess/2021/14/3',
-                                '/toc/taccess/2021/14/2']
+                                '/toc/taccess/2021/14/2', '/toc/taccess/2021/14/1', '/toc/taccess/2022/15/2',
+                                '/toc/taccess/2022/15/1', '/toc/taco/2018/15/4', '/toc/taco/2018/15/3',
+                                '/toc/taco/2018/15/2', '/toc/taco/2018/15/1', '/toc/taco/2019/16/4',
+                                '/toc/taco/2019/16/3', '/toc/taco/2019/16/2', '/toc/taco/2019/16/1',
+                                '/toc/taco/2020/17/4', '/toc/taco/2020/17/3', '/toc/taco/2020/17/2',
+                                '/toc/taco/2020/17/1', '/toc/taco/2021/18/4', '/toc/taco/2021/18/3',
+                                '/toc/taco/2021/18/2', '/toc/taco/2021/18/1', '/toc/taco/2022/19/3',
+                                '/toc/taco/2022/19/2', '/toc/taco/2022/19/1', '/toc/talg/2018/14/4',
+                                '/toc/talg/2018/14/3', '/toc/talg/2018/14/2', '/toc/talg/2018/14/1',
+                                '/toc/talg/2019/15/4', '/toc/talg/2019/15/3', '/toc/talg/2019/15/2',
+                                '/toc/talg/2019/15/1', '/toc/talg/2020/16/4', '/toc/talg/2020/16/3',
+                                '/toc/talg/2020/16/2', '/toc/talg/2020/16/1', '/toc/talg/2021/17/4',
+                                '/toc/talg/2021/17/3', '/toc/talg/2021/17/2', '/toc/talg/2021/17/1',
+                                '/toc/talg/2022/18/2', '/toc/talg/2022/18/1', '/toc/tallip/2018/17/4',
+                                '/toc/tallip/2018/17/3', '/toc/tallip/2018/17/2', '/toc/tallip/2018/17/1',
+                                '/toc/tallip/2019/18/4', '/toc/tallip/2019/18/3', '/toc/tallip/2019/18/2',
+                                '/toc/tallip/2019/18/1', '/toc/tallip/2020/19/6', '/toc/tallip/2020/19/5',
+                                '/toc/tallip/2020/19/4', '/toc/tallip/2020/19/3', '/toc/tallip/2020/19/2',
+                                '/toc/tallip/2020/19/1', '/toc/tallip/2021/20/6', '/toc/tallip/2021/20/5',
+                                '/toc/tallip/2021/20/4', '/toc/tallip/2021/20/3', '/toc/tallip/2021/20/2',
+                                '/toc/tallip/2021/20/1', '/toc/tallip/2022/21/5', '/toc/tallip/2022/21/4',
+                                '/toc/tallip/2022/21/3']
 
 
 @wait(15)
