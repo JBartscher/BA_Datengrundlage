@@ -132,10 +132,25 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/tallip/2020/19/1', '/toc/tallip/2021/20/6', '/toc/tallip/2021/20/5',
                                 '/toc/tallip/2021/20/4', '/toc/tallip/2021/20/3', '/toc/tallip/2021/20/2',
                                 '/toc/tallip/2021/20/1', '/toc/tallip/2022/21/5', '/toc/tallip/2022/21/4',
-                                '/toc/tallip/2022/21/3']
+                                '/toc/tallip/2022/21/3', '/toc/tallip/2022/21/2', '/toc/tallip/2022/21/1',
+                                '/toc/tap/2018/15/4', '/toc/tap/2018/15/3', '/toc/tap/2018/15/2', '/toc/tap/2018/15/1',
+                                '/toc/tap/2019/16/4', '/toc/tap/2019/16/3', '/toc/tap/2019/16/2', '/toc/tap/2019/16/1',
+                                '/toc/tap/2020/17/4', '/toc/tap/2020/17/3', '/toc/tap/2020/17/2', '/toc/tap/2020/17/1',
+                                '/toc/tap/2021/18/4', '/toc/tap/2021/18/3', '/toc/tap/2021/18/2', '/toc/tap/2021/18/1',
+                                '/toc/tap/2022/19/1', '/toc/taslp/2018/26/12', '/toc/taslp/2018/26/11',
+                                '/toc/taslp/2018/26/2', '/toc/taslp/2018/26/1', '/toc/taslp/2018/26/10',
+                                '/toc/taslp/2018/26/9', '/toc/taslp/2018/26/8', '/toc/taslp/2018/26/7',
+                                '/toc/taslp/2018/26/6', '/toc/taslp/2018/26/5', '/toc/taslp/2018/26/4',
+                                '/toc/taslp/2018/26/3', '/toc/taslp/2019/27/12', '/toc/taslp/2019/27/11',
+                                '/toc/taslp/2019/27/2', '/toc/taslp/2019/27/1', '/toc/taslp/2019/27/10',
+                                '/toc/taslp/2019/27/9', '/toc/taslp/2019/27/8', '/toc/taslp/2019/27/7',
+                                '/toc/taslp/2019/27/6', '/toc/taslp/2019/27/5', '/toc/taslp/2019/27/4',
+                                '/toc/taslp/2019/27/3', '/toc/10.5555/taslp.2020.issue-28',
+                                '/toc/10.5555/taslp.2021.issue-29', '/toc/10.5555/taslp.2022.issue-30',
+                                '/toc/tcbb/2018/15/6', '/toc/tcbb/2018/15/5', '/toc/tcbb/2018/15/4']
 
 
-@wait(15)
+@wait(12)
 def click_element(element, driver):
     logger.info(f'clicking element: {element}')
     print(f'clicking element: {element}')
@@ -159,7 +174,7 @@ def parse_bibtext_to_json(parser, bibtext_raw_str: str):
         return None
 
 
-@wait(15)
+@wait(12)
 def click_wrapper(element):
     element.click()
 
@@ -174,7 +189,7 @@ def collect_all_citations():
             try:
                 collect_citations_for_journal_issue(journal, link)
                 already_done_journals_issues.append(link)
-                print(f'[{timestamp}]done with: {already_done_journals_issues}')
+                print(f'[{timestamp()}]done with: {already_done_journals_issues}')
                 print_and_pickle_all_already_scrapped_entries()
             except NoSuchElementException as e:
                 print(e)
