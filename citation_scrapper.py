@@ -147,7 +147,9 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/taslp/2019/27/6', '/toc/taslp/2019/27/5', '/toc/taslp/2019/27/4',
                                 '/toc/taslp/2019/27/3', '/toc/10.5555/taslp.2020.issue-28',
                                 '/toc/10.5555/taslp.2021.issue-29', '/toc/10.5555/taslp.2022.issue-30',
-                                '/toc/tcbb/2018/15/6', '/toc/tcbb/2018/15/5', '/toc/tcbb/2018/15/4']
+                                '/toc/tcbb/2018/15/6', '/toc/tcbb/2018/15/5', '/toc/tcbb/2018/15/4',
+                                '/toc/tcbb/2018/15/3', '/toc/tcbb/2018/15/2', '/toc/tcbb/2018/15/1',
+                                '/toc/tcbb/2019/16/6', '/toc/tcbb/2019/16/5']
 
 
 @wait(12)
