@@ -149,7 +149,20 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/10.5555/taslp.2021.issue-29', '/toc/10.5555/taslp.2022.issue-30',
                                 '/toc/tcbb/2018/15/6', '/toc/tcbb/2018/15/5', '/toc/tcbb/2018/15/4',
                                 '/toc/tcbb/2018/15/3', '/toc/tcbb/2018/15/2', '/toc/tcbb/2018/15/1',
-                                '/toc/tcbb/2019/16/6', '/toc/tcbb/2019/16/5']
+                                '/toc/tcbb/2019/16/6', '/toc/tcbb/2019/16/5', '/toc/tcbb/2019/16/4',
+                                '/toc/tcbb/2019/16/3', '/toc/tcbb/2019/16/2', '/toc/tcbb/2019/16/1',
+                                '/toc/tcbb/2020/17/6', '/toc/tcbb/2020/17/5', '/toc/tcbb/2020/17/4',
+                                '/toc/tcbb/2020/17/3', '/toc/tcbb/2020/17/2', '/toc/tcbb/2020/17/1',
+                                '/toc/tcbb/2021/18/6', '/toc/tcbb/2021/18/5', '/toc/tcbb/2021/18/4',
+                                '/toc/tcbb/2021/18/3', '/toc/tcbb/2021/18/2', '/toc/tcbb/2021/18/1',
+                                '/toc/tcps/2018/2/4', '/toc/tcps/2018/2/3', '/toc/tcps/2018/2/2', '/toc/tcps/2018/2/1',
+                                '/toc/tcps/2019/3/4', '/toc/tcps/2019/3/3', '/toc/tcps/2019/3/2', '/toc/tcps/2019/3/1',
+                                '/toc/tcps/2020/4/4', '/toc/tcps/2020/4/3', '/toc/tcps/2020/4/2', '/toc/tcps/2020/4/1',
+                                '/toc/tcps/2021/5/4', '/toc/tcps/2021/5/3', '/toc/tcps/2021/5/2', '/toc/tcps/2021/5/1',
+                                '/toc/tcps/2022/6/2', '/toc/tcps/2022/6/1', '/toc/tds/2020/1/4', '/toc/tds/2020/1/3',
+                                '/toc/tds/2020/1/2', '/toc/tds/2020/1/1', '/toc/tds/2021/2/4', '/toc/tds/2021/2/3',
+                                '/toc/tds/2021/2/2', '/toc/tds/2021/2/1', '/toc/teac/2018/6/3-4', '/toc/teac/2018/6/2',
+                                '/toc/teac/2018/6/1', '/toc/teac/2019/7/4', '/toc/teac/2019/7/3']
 
 
 @wait(6)
