@@ -163,7 +163,11 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/tds/2020/1/2', '/toc/tds/2020/1/1', '/toc/tds/2021/2/4', '/toc/tds/2021/2/3',
                                 '/toc/tds/2021/2/2', '/toc/tds/2021/2/1', '/toc/teac/2018/6/3-4', '/toc/teac/2018/6/2',
                                 '/toc/teac/2018/6/1', '/toc/teac/2019/7/4', '/toc/teac/2019/7/3', '/toc/teac/2019/7/2',
-                                '/toc/teac/2019/7/1', '/toc/teac/2019/7/2']
+                                '/toc/teac/2019/7/1', '/toc/teac/2019/7/2', '/toc/teac/2020/8/4', '/toc/teac/2020/8/3',
+                                '/toc/teac/2020/8/2', '/toc/teac/2020/8/1', '/toc/teac/2021/9/4', '/toc/teac/2021/9/3',
+                                '/toc/teac/2021/9/2', '/toc/teac/2021/9/1', '/toc/teac/2022/10/1',
+                                '/toc/tecs/2018/17/6', '/toc/tecs/2018/17/5', '/toc/tecs/2018/17/4',
+                                '/toc/tecs/2018/17/3', '/toc/tecs/2018/17/2', '/toc/tecs/2018/17/1']
 
 
 @wait(10)
