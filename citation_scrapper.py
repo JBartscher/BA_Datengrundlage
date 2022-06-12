@@ -167,10 +167,17 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/teac/2020/8/2', '/toc/teac/2020/8/1', '/toc/teac/2021/9/4', '/toc/teac/2021/9/3',
                                 '/toc/teac/2021/9/2', '/toc/teac/2021/9/1', '/toc/teac/2022/10/1',
                                 '/toc/tecs/2018/17/6', '/toc/tecs/2018/17/5', '/toc/tecs/2018/17/4',
-                                '/toc/tecs/2018/17/3', '/toc/tecs/2018/17/2', '/toc/tecs/2018/17/1']
+                                '/toc/tecs/2018/17/3', '/toc/tecs/2018/17/2', '/toc/tecs/2018/17/1',
+                                '/toc/tecs/2019/18/6', '/toc/tecs/2019/18/5s', '/toc/tecs/2019/18/5',
+                                '/toc/tecs/2019/18/4', '/toc/tecs/2019/18/3', '/toc/tecs/2019/18/2',
+                                '/toc/tecs/2019/18/1', '/toc/tecs/2020/19/6', '/toc/tecs/2020/19/5',
+                                '/toc/tecs/2020/19/4', '/toc/tecs/2020/19/3', '/toc/tecs/2020/19/2',
+                                '/toc/tecs/2020/19/1', '/toc/tecs/2021/20/6', '/toc/tecs/2021/20/5',
+                                '/toc/tecs/2021/20/4', '/toc/tecs/2021/20/3', '/toc/tecs/2021/20/2',
+                                '/toc/tecs/2021/20/1', '/toc/tecs/2022/21/2', '/toc/tecs/2022/21/1']
 
 
-@wait(10)
+@wait(6)
 def click_element(element, driver):
     logger.info(f'clicking element: {element}')
     print(f'clicking element: {element}')
@@ -194,7 +201,7 @@ def parse_bibtext_to_json(parser, bibtext_raw_str: str):
         return None
 
 
-@wait(10)
+@wait(6)
 def click_wrapper(element):
     element.click()
 
