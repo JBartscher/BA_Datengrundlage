@@ -163,10 +163,10 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/tds/2020/1/2', '/toc/tds/2020/1/1', '/toc/tds/2021/2/4', '/toc/tds/2021/2/3',
                                 '/toc/tds/2021/2/2', '/toc/tds/2021/2/1', '/toc/teac/2018/6/3-4', '/toc/teac/2018/6/2',
                                 '/toc/teac/2018/6/1', '/toc/teac/2019/7/4', '/toc/teac/2019/7/3', '/toc/teac/2019/7/2',
-                                '/toc/teac/2019/7/1']
+                                '/toc/teac/2019/7/1', '/toc/teac/2019/7/2']
 
 
-@wait(6)
+@wait(10)
 def click_element(element, driver):
     logger.info(f'clicking element: {element}')
     print(f'clicking element: {element}')
@@ -190,7 +190,7 @@ def parse_bibtext_to_json(parser, bibtext_raw_str: str):
         return None
 
 
-@wait(6)
+@wait(10)
 def click_wrapper(element):
     element.click()
 
