@@ -197,7 +197,10 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/tist/2021/12/6', '/toc/tist/2021/12/5', '/toc/tist/2021/12/4',
                                 '/toc/tist/2021/12/3', '/toc/tist/2021/12/2', '/toc/tist/2021/12/1',
                                 '/toc/tist/2022/13/4', '/toc/tist/2022/13/3', '/toc/tist/2022/13/2',
-                                '/toc/tist/2022/13/1', '/toc/tkdd/2018/12/6', '/toc/tkdd/2018/12/5']
+                                '/toc/tist/2022/13/1', '/toc/tkdd/2018/12/6', '/toc/tkdd/2018/12/5',
+                                '/toc/tkdd/2018/12/4', '/toc/tkdd/2018/12/3', '/toc/tkdd/2018/12/2',
+                                '/toc/tkdd/2018/12/1', '/toc/tkdd/2019/13/6', '/toc/tkdd/2019/13/5',
+                                '/toc/tkdd/2019/13/4', '/toc/tkdd/2019/13/3']
 
 
 @wait(6)
