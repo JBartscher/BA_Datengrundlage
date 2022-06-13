@@ -174,7 +174,30 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/tecs/2020/19/4', '/toc/tecs/2020/19/3', '/toc/tecs/2020/19/2',
                                 '/toc/tecs/2020/19/1', '/toc/tecs/2021/20/6', '/toc/tecs/2021/20/5',
                                 '/toc/tecs/2021/20/4', '/toc/tecs/2021/20/3', '/toc/tecs/2021/20/2',
-                                '/toc/tecs/2021/20/1', '/toc/tecs/2022/21/2', '/toc/tecs/2022/21/1']
+                                '/toc/tecs/2021/20/1', '/toc/tecs/2022/21/2', '/toc/tecs/2022/21/1',
+                                '/toc/telo/2021/1/4', '/toc/telo/2021/1/3', '/toc/telo/2021/1/2', '/toc/telo/2021/1/1',
+                                '/toc/telo/2022/2/1', '/toc/thri/2018/7/3', '/toc/thri/2018/7/2', '/toc/thri/2018/7/1',
+                                '/toc/thri/2019/8/4', '/toc/thri/2019/8/3', '/toc/thri/2019/8/2', '/toc/thri/2019/8/1',
+                                '/toc/thri/2020/9/4', '/toc/thri/2020/9/3', '/toc/thri/2020/9/2', '/toc/thri/2020/9/1',
+                                '/toc/thri/2021/10/4', '/toc/thri/2021/10/3', '/toc/thri/2021/10/2',
+                                '/toc/thri/2021/10/1', '/toc/thri/2022/11/2', '/toc/thri/2022/11/1',
+                                '/toc/tiis/2018/8/4', '/toc/tiis/2018/8/3', '/toc/tiis/2018/8/2', '/toc/tiis/2018/8/1',
+                                '/toc/tiis/2019/9/4', '/toc/tiis/2019/9/2-3', '/toc/tiis/2019/9/1',
+                                '/toc/tiis/2020/10/4', '/toc/tiis/2020/10/3', '/toc/tiis/2020/10/2',
+                                '/toc/tiis/2020/10/1', '/toc/tiis/2021/11/3-4', '/toc/tiis/2021/11/2',
+                                '/toc/tiis/2021/11/1', '/toc/tiis/2022/12/1', '/toc/tiot/2020/1/4',
+                                '/toc/tiot/2020/1/3', '/toc/tiot/2020/1/2', '/toc/tiot/2020/1/1', '/toc/tiot/2021/2/4',
+                                '/toc/tiot/2021/2/3', '/toc/tiot/2021/2/2', '/toc/tiot/2021/2/1', '/toc/tiot/2022/3/3',
+                                '/toc/tiot/2022/3/2', '/toc/tiot/2022/3/1', '/toc/tist/2018/9/6', '/toc/tist/2018/9/5',
+                                '/toc/tist/2018/9/4', '/toc/tist/2018/9/3', '/toc/tist/2018/9/2', '/toc/tist/2018/9/1',
+                                '/toc/tist/2019/10/6', '/toc/tist/2019/10/5', '/toc/tist/2019/10/4',
+                                '/toc/tist/2019/10/3', '/toc/tist/2019/10/2', '/toc/tist/2019/10/1',
+                                '/toc/tist/2020/11/6', '/toc/tist/2020/11/5', '/toc/tist/2020/11/4',
+                                '/toc/tist/2020/11/3', '/toc/tist/2020/11/2', '/toc/tist/2020/11/1',
+                                '/toc/tist/2021/12/6', '/toc/tist/2021/12/5', '/toc/tist/2021/12/4',
+                                '/toc/tist/2021/12/3', '/toc/tist/2021/12/2', '/toc/tist/2021/12/1',
+                                '/toc/tist/2022/13/4', '/toc/tist/2022/13/3', '/toc/tist/2022/13/2',
+                                '/toc/tist/2022/13/1', '/toc/tkdd/2018/12/6', '/toc/tkdd/2018/12/5']
 
 
 @wait(6)
