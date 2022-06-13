@@ -202,7 +202,13 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/tkdd/2018/12/1', '/toc/tkdd/2019/13/6', '/toc/tkdd/2019/13/5',
                                 '/toc/tkdd/2019/13/4', '/toc/tkdd/2019/13/3', '/toc/tkdd/2019/13/2',
                                 '/toc/tkdd/2019/13/1', '/toc/tkdd/2020/14/6', '/toc/tkdd/2020/14/5',
-                                '/toc/tkdd/2020/14/4', '/toc/tkdd/2020/14/3', '/toc/tkdd/2020/14/2']
+                                '/toc/tkdd/2020/14/4', '/toc/tkdd/2020/14/3', '/toc/tkdd/2020/14/2',
+                                '/toc/tkdd/2020/14/1', '/toc/tkdd/2021/15/5', '/toc/tkdd/2021/15/4',
+                                '/toc/tkdd/2021/15/3', '/toc/tkdd/2021/15/6', '/toc/tkdd/2021/15/2',
+                                '/toc/tkdd/2021/15/1', '/toc/tkdd/2022/16/5', '/toc/tkdd/2022/16/4',
+                                '/toc/tkdd/2022/16/3', '/toc/tkdd/2022/16/2', '/toc/tkdd/2022/16/1',
+                                '/toc/tmis/2018/9/4', '/toc/tmis/2018/9/3', '/toc/tmis/2018/9/2', '/toc/tmis/2018/9/1',
+                                '/toc/tmis/2019/10/4', '/toc/tmis/2019/10/3']
 
 
 @wait(6)
