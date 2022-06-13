@@ -209,7 +209,19 @@ already_done_journals_issues = ['/toc/csur/2018/50/6', '/toc/csur/2018/50/5', '/
                                 '/toc/tkdd/2022/16/3', '/toc/tkdd/2022/16/2', '/toc/tkdd/2022/16/1',
                                 '/toc/tmis/2018/9/4', '/toc/tmis/2018/9/3', '/toc/tmis/2018/9/2', '/toc/tmis/2018/9/1',
                                 '/toc/tmis/2019/10/4', '/toc/tmis/2019/10/3', '/toc/tmis/2019/10/2',
-                                '/toc/tmis/2019/10/1', '/toc/tmis/2020/11/4', '/toc/tmis/2020/11/3']
+                                '/toc/tmis/2019/10/1', '/toc/tmis/2020/11/4', '/toc/tmis/2020/11/3',
+                                '/toc/tmis/2020/11/2', '/toc/tmis/2020/11/1', '/toc/tmis/2021/12/4',
+                                '/toc/tmis/2021/12/3', '/toc/tmis/2021/12/2', '/toc/tmis/2021/12/1',
+                                '/toc/tmis/2022/13/3', '/toc/tmis/2022/13/2', '/toc/tmis/2022/13/1',
+                                '/toc/toce/2018/18/4', '/toc/toce/2018/18/3', '/toc/toce/2018/18/2',
+                                '/toc/toce/2018/18/1', '/toc/toce/2019/19/4', '/toc/toce/2019/19/3',
+                                '/toc/toce/2019/19/2', '/toc/toce/2019/19/1', '/toc/toce/2020/20/4',
+                                '/toc/toce/2020/20/3', '/toc/toce/2020/20/2', '/toc/toce/2020/20/1',
+                                '/toc/toce/2021/21/4', '/toc/toce/2021/21/3', '/toc/toce/2021/21/2',
+                                '/toc/toce/2021/21/1', '/toc/toce/2022/22/2', '/toc/toce/2022/22/1',
+                                '/toc/tochi/2018/25/6', '/toc/tochi/2018/25/5', '/toc/tochi/2018/25/4',
+                                '/toc/tochi/2018/25/3', '/toc/tochi/2018/25/2', '/toc/tochi/2018/25/1',
+                                '/toc/tochi/2019/26/6', '/toc/tochi/2019/26/5']
 
 
 @wait(6)
