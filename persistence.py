@@ -5,7 +5,7 @@ import pytz
 
 
 class FirestoreClientSingleton:
-    CRED_PATH = "./serviceAccountKey.json"
+    CRED_PATH = "../serviceAccountKey.json"
     __cred = credentials.Certificate(CRED_PATH)
     __app = firebase_admin.initialize_app(__cred)
 
