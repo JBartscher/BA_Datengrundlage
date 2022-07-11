@@ -1,12 +1,13 @@
 from unittest import TestCase
 
-from data_transform.Link import Link
-from data_transform.Node import Node
+from data_transform.foo.node import Node
+from data_transform.foo.link import Link
+
 
 
 class TestLink(TestCase):
-    n_1 = Node()
-    n_2 = Node()
+    n_1 = Node("test123", 2022)
+    n_2 = Node("test321", 2022)
 
     def generate_test_link(self) -> Link:
         test_link = Link(self.n_1, self.n_2, 1)
@@ -28,7 +29,7 @@ class TestLink(TestCase):
         self.assertEqual(new_value, link.get_value())
 
     def test_eq(self):
-        n_3 = Node()
+        n_3 = Node("test213", 2022)
 
         l1 = self.generate_test_link()
         # value is ignored when comparing equality

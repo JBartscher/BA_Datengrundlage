@@ -1,4 +1,4 @@
-from data_transform.Node import Node
+from .node import Node
 
 
 class Link:
@@ -21,5 +21,10 @@ class Link:
         self._value = new_value
 
     def __eq__(self, other):
-        return (self.get_source() == other.get_source() and self.get_target() == other.get_target()) or (
-                self.get_source() == other.get_target() and self.get_target() == other.get_source())
+        # TODO this does not account for diffrences in value
+        return isinstance(other, Link) and (
+                (self.get_source() == other.get_source() and self.get_target() == other.get_target()) or (
+                self.get_source() == other.get_target() and self.get_target() == other.get_source()))
+
+    def __repr__(self):
+        return f'{self._source} --> {self._target} : {self._value}'
