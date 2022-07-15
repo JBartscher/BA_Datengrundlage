@@ -20,6 +20,9 @@ class Link:
     def set_value(self, new_value: int):
         self._value = new_value
 
+    def __hash__(self):
+        return hash((self._target.get_keyword(), self._target.get_keyword()))
+
     def __eq__(self, other):
         # TODO this does not account for diffrences in value
         return isinstance(other, Link) and (
@@ -28,3 +31,6 @@ class Link:
 
     def __repr__(self):
         return f'{self._source} --> {self._target} : {self._value}'
+
+    def merge_links(self, other: 'Link'):
+        self._value += other.get_value()

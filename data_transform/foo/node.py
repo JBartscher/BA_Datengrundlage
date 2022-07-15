@@ -44,8 +44,29 @@ class Node:
 
     def merge_node_into_this_node(self, other: 'Node'):
         self.set_count(self.get_count() + other._count)
-        missing_links = filter(lambda l: l not in self._links, other._links)
-        self._links.extend(missing_links)
+        # missing_links = filter(lambda l: l not in self._links, other._links)
+        self._links.extend(other._links)
+        self.cleanup_links_of_node()
+
+    def cleanup_links_of_node(self):
+        seen = set()
+        unique_links = list()
+
+        tmp = self.get_links()
+        for i, link in enumerate(tmp):
+
+            if link.get_source() == link.get_target():
+                continue
+
+            if link in seen:
+                index_of_link = unique_links.index(link)
+                unique_links[index_of_link].merge_links(link)
+                continue
+
+            seen.add(link)
+            unique_links.append(link)
+
+        self._links = unique_links
 
     def __eq__(self, other: 'Node'):
         return isinstance(other, Node) and (self._keyword == other.get_keyword()) and (self._year == other.get_year())
@@ -58,3 +79,10 @@ class Node:
 
     def __str__(self):
         return f'keyword: {self._keyword}, year {self._year}, count: {self._count}'
+
+    @staticmethod
+    def find_index_of_link_in_list(node, list_of_links: List['Link']):
+        for i, v in enumerate(list_of_links):
+            if v.get() == node.get_keyword():
+                return i
+        return -1

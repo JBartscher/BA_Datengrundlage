@@ -27,8 +27,6 @@ class WeightedNodeGraph:
         seen = set()
         unique_nodes = list()
 
-        # tmp_nodes = copy.deepcopy(self.nodes)
-
         for i, n in enumerate(self.nodes):
             if n not in seen:
                 seen.add(n)
@@ -38,6 +36,7 @@ class WeightedNodeGraph:
                 index = WeightedNodeGraph.find_index_of_node_in_list(n, unique_nodes)
                 unique_node = unique_nodes[index]
                 unique_node.merge_node_into_this_node(n)
+                unique_node.cleanup_links_of_node()
                 unique_nodes[index] = unique_node
                 print(i)
 
