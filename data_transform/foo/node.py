@@ -1,4 +1,5 @@
-from typing import List
+from json import JSONEncoder
+from typing import List, Any
 
 
 class Node:
@@ -86,3 +87,8 @@ class Node:
             if v.get() == node.get_keyword():
                 return i
         return -1
+
+
+class NodeEncoder(JSONEncoder):
+    def default(self, o: Any) -> Any:
+        return o.__dict__

@@ -1,4 +1,4 @@
-import copy
+import json
 import pickle
 from typing import List, Dict
 
@@ -64,6 +64,31 @@ class WeightedNodeGraph:
         lowered = map(str.lower, splitted)
         return list(lowered)
 
+    def nodes_to_json(self):
+        nodes = []
+        for n in self.nodes:
+            nodes.append({'id': n.get_keyword(), 'value': n.get_count(), 'year': n.get_year()})
+        return json.dumps(nodes)
+
+    def links_to_json(self):
+        links = []
+        for n in self.nodes:
+            for l in n.get_links():
+                links.append({'source': l.get_source().get_keyword(), 'target': l.get_target().get_keyword(),
+                              'value': l.get_value(), 'year': n.get_year()})
+
+        return json.dumps(links)
+
+    def to_json(self):
+        data = {'nodes': [], 'links': []}
+
+        for n in self.nodes:
+            data.get('nodes').append({'id': n.get_keyword(), 'value': n.get_count(), 'year': n.get_year()})
+            for l in n.get_links():
+                data.get('links').append(
+                    {'source': l.get_source().get_keyword(), 'target': l.get_target().get_keyword(),
+                     'value': l.get_value(), 'year': n.get_year()})
+
 
 def get_docs() -> List[Dict]:
     all_documents = []
@@ -94,5 +119,8 @@ if __name__ == '__main__':
     graph.from_dict(docs)
     graph.mash_up_duplicate_nodes()
 
-    print(graph.nodes)
-    print("yoo")
+    data = graph.to_json()
+    print("save data to json file")
+
+    with open('data.json', 'w') as f:
+        json.dump(data, f)

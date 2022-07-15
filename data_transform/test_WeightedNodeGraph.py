@@ -56,3 +56,15 @@ class TestWeightedNodeGraph(TestCase):
 
         actual_data = WeightedNodeGraph.reduce_keys(test_data)
         self.assertEqual(expected_data, actual_data)
+
+    def test_nodes_to_json(self):
+        graph = WeightedNodeGraph()
+        graph.from_dict(generate_test_docs())
+        nodes_json = graph.nodes_to_json()
+        print(nodes_json)
+
+    def test_links_to_json(self):
+        graph = WeightedNodeGraph()
+        graph.from_dict(generate_test_docs())
+        links_json = graph.links_to_json()
+        print(links_json)
