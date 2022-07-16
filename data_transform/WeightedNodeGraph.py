@@ -89,6 +89,8 @@ class WeightedNodeGraph:
                     {'source': l.get_source().get_keyword(), 'target': l.get_target().get_keyword(),
                      'value': l.get_value(), 'year': n.get_year()})
 
+        return data
+
 
 def get_docs() -> List[Dict]:
     all_documents = []
@@ -124,3 +126,4 @@ if __name__ == '__main__':
 
     with open('data.json', 'w') as f:
         json.dump(data, f)
+        # https://bl.ocks.org/martinjc/e4c013dab1fabb2e02e2ee3bc6e1b49d
