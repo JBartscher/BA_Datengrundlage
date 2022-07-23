@@ -28,10 +28,5 @@ def timestamp():
     return now.strftime("%d-%m-%Y %H:%M:%S")
 
 
-@wait(3)
-def foo(gef):
-    print("foooo")
-
-
 if __name__ == '__main__':
     foo("fed")

@@ -4,6 +4,7 @@ from typing import List, Dict
 
 from data_transform.foo.link import Link
 from data_transform.foo.node import Node
+from data_transform.util import find_synonym
 from persistence import get_documents_from_firestore
 
 
@@ -45,14 +46,14 @@ class WeightedNodeGraph:
     @staticmethod
     def find_index_of_node_in_list(node, list_of_nodes: List[Node]):
         for i, v in enumerate(list_of_nodes):
-            if v.get_keyword() == node.get_keyword():
+            if v.get_keyword() == node.get_keyword() and v.get_year() == node.get_year():
                 return i
         return -1
 
     @staticmethod
     def reduce_keys(dictionary: Dict) -> Dict:
         x = {'keywords': [], 'year': None}
-        keywords = dictionary.get('keywords', "No Keywords")
+        keywords = dictionary.get('keywords', "None")
         x['keywords'] = WeightedNodeGraph.purify_keywords(keywords)
         year = dictionary.get('year', -1)
         x['year'] = year
@@ -62,7 +63,8 @@ class WeightedNodeGraph:
     def purify_keywords(keyword_str: str) -> List[str]:
         splitted = map(str.strip, keyword_str.split(','))
         lowered = map(str.lower, splitted)
-        return list(lowered)
+        synonyme = map(find_synonym, lowered)
+        return list(synonyme)
 
     def nodes_to_json(self):
         nodes = []
@@ -81,7 +83,6 @@ class WeightedNodeGraph:
 
     def to_json(self):
         data = {'nodes': [], 'links': []}
-
         for n in self.nodes:
             data.get('nodes').append({'id': n.get_keyword(), 'value': n.get_count(), 'year': n.get_year()})
             for l in n.get_links():

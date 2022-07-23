@@ -11,9 +11,6 @@ class Node:
 
     _year: int
 
-    def get_keyword(self):
-        return self._keyword
-
     def __init__(self, keyword: str, year: int):
         self._links = []
         self._keyword = keyword
@@ -24,6 +21,9 @@ class Node:
 
     def get_year(self) -> int:
         return self._year
+
+    def get_keyword(self) -> str:
+        return self._keyword
 
     def get_count(self) -> int:
         return self._count

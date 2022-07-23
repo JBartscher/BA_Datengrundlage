@@ -21,6 +21,14 @@ def generate_test_docs():
             'ID': '10.4123/123545', 'url': 'https://doi.org/10.4123/123545', 'year': '2017',
             'keywords': 'machine learning, process model'
         },
+        {
+            'ID': '10.4123/123545', 'url': 'https://doi.org/10.4123/123545', 'year': '2019',
+            'keywords': 'machine learning'
+        },
+        {
+            'ID': '10.4123/123545', 'url': 'https://doi.org/10.4123/123545', 'year': '2019',
+            'keywords': 'machine learning'
+        },
 
     ]
 
@@ -33,9 +41,9 @@ class TestWeightedNodeGraph(TestCase):
         graph = WeightedNodeGraph()
 
         graph.from_dict(generate_test_docs())
-        self.assertEqual(11, len(graph.nodes))
+        self.assertEqual(13, len(graph.nodes))
         graph.mash_up_duplicate_nodes()
-        self.assertEqual(6, len(graph.nodes))
+        self.assertEqual(7, len(graph.nodes))
 
         self.assertEqual(3, graph.nodes[0].get_count())
         self.assertEqual(2, len(graph.nodes[0].get_links()))
